@@ -11,8 +11,8 @@ def index(request):
 
 def about(request):
     para1="Hi I am a sophomore at "
-    para1_1=". Majoring in Computer Science with Applied Mathematics."
-    para2="I do web development, CP and other stuff.I like playing CTF and Django is my favourite backend stack. Contact me for projects."
+    para1_1=". I am majoring in Computer Science with Applied Mathematics."
+    para2="I do web development, CP and other stuff. I like playing CTF, and Django is my favourite backend stack. Contact for projects."
     context={
         "para1": para1,
         "para1_1": para1_1,
