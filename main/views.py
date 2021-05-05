@@ -36,7 +36,8 @@ def contact(request):
         subject="Website Contact Form:"+str(name)
         body=f"You have received a new message from your website contact form.\n\n.Here are the details:\n\nName: {name}\n\nEmail: {email}\n\nPhone: {phone}\n\nMessage:\n{message}".format(name=name,email=email,phone=phone,message=message)
         from_=email
-        to=[config("SEND_TO")]
+        to=[""]
+        to[0]=config("SEND_TO")
         if name!="" and email!="" and phone!="" and message!="":
             try:
                 data1={"from": from_,
@@ -44,8 +45,12 @@ def contact(request):
                 "text": body,
                 "subject":subject,
                 }
+                # print("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+                key= config("API")
+                # print(key)
+                
                 t=requests.post(
-            config["API"],
+                 key,
             auth=("api", config("API_KEY")),
             data=data1
                 )
