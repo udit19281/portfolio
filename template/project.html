@@ -22,7 +22,7 @@
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" style="max-width:900;max-height:600;min-width: 300px;min-height: 300px;"src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" {{ item.image }} alt="..." />
+                    <img class="img-fluid" style="max-width:900;max-height:600;min-width: 400px;min-height: 400px;"src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" {{ item.image }} alt="..." />
                     <h3 class="mb-3 mt-5 text-center" style="color: #0859a9;">{{item.name}}</h3>
                 </div>
                 
@@ -52,13 +52,13 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" alt="..." />
+                            <img class="img-fluid rounded mb-3" style="max-width:900;max-height:600;" src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <h4 class="mb-5" style="color: #0859a9;">{{item.details}}</h4>
+                            <h5 class="mb-2" style="color: #0859a9;">{{item.details}}</h5>
                             <!-- Portfolio Modal -Link -->
-                            <a class="mb-5" href="{{item.link}}">Project Link</a>
+                            <a class="mb-3" href="{{item.link}}">Project Link</a>
                             <br>
-                            <button class="btn btn-primary mt-5" data-dismiss="modal">
+                            <button class="btn btn-primary mt-2" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
                             </button>
