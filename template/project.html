@@ -6,7 +6,7 @@
   <section class="page-section portfolio" id="portfolio">
     <div class="container mt-5">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projects</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" >Projects</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -23,7 +23,7 @@
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
                     <img class="img-fluid" style="max-width:900;max-height:600;min-width: 300px;min-height: 300px;"src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" {{ item.image }} alt="..." />
-                    <h2 class="mb-3 mt-5 text-center">{{item.name}}</p>
+                    <h3 class="mb-3 mt-5 text-center" style="color: #0859a9;">{{item.name}}</h3>
                 </div>
                 
             </div>
@@ -54,7 +54,7 @@
                             <!-- Portfolio Modal - Image-->
                             <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-5">{{item.details}}</p>
+                            <h4 class="mb-5" style="color: #0859a9;">{{item.details}}</h4>
                             <!-- Portfolio Modal -Link -->
                             <a class="mb-5" href="{{item.link}}">Project Link</a>
                             <br>
