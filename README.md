@@ -10,4 +10,4 @@ Mail Server: Mailgun
 
 Hosting Platform: Heroku
 
-Template Credits : https://startbootstrap.com/
+Template Credits : Start Bootstrap
