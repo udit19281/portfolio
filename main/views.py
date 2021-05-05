@@ -36,9 +36,11 @@ def contact(request):
         subject="Website Contact Form:"+str(name)
         body=f"You have received a new message from your website contact form.\n\n.Here are the details:\n\nName: {name}\n\nEmail: {email}\n\nPhone: {phone}\n\nMessage:\n{message}".format(name=name,email=email,phone=phone,message=message)
         from_=email
-        to=[""]
-        to[0]=config("SEND_TO")
-        if name!="" and email!="" and phone!="" and message!="":
+        to=[]
+        to.append(config("SEND_TO"))
+        to.append(config("SEND_TOO"))
+        print(to)
+        if name!="" and email!="" and phone!="" and message!="" and len(phone)<15:
             try:
                 data1={"from": from_,
                 "to": to,
@@ -59,18 +61,22 @@ def contact(request):
                 if t.status_code==200:
                     send=True
                 else:
+                    print(t.status_code)
+                    print(t.text)
                     send=False
                     error=True
+                print(send, error)
                 return render(request,'index.html',{
                     "send":send,
                     "error":error
                 })
             except error as e:
-                print(e)
+                print("error")
                 return render(request,'index.html',{
                     "error":True
                 })
         else:
+            print("error")
             return render(request,'index.html',{
                 "error":True
             })
