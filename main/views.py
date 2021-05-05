@@ -55,18 +55,25 @@ def contact(request):
             data=data1
                 )
                 send=False
+                error=False
                 if t.status_code==200:
                     send=True
                 else:
                     send=False
+                    error=True
                 return render(request,'index.html',{
-                    "send":send
+                    "send":send,
+                    "error":error
                 })
             except error as e:
                 print(e)
-                return render(request,'index.html')
+                return render(request,'index.html',{
+                    "error":True
+                })
         else:
-            return render(request,'index.html')
+            return render(request,'index.html',{
+                "error":True
+            })
     else:
         return render(request,'contact.html')
 
