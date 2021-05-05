@@ -115,6 +115,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 if not DEBUG:
+    SECURE_PROXY_SSL_HEADER =('HTTP_X_FORWARDED_PROTO',"https")
+    SECURE_SSL_REDIRECT=True
+    CSRF_COOKIE_SECURE=True
+    SECURE_HSTS_PRELOAD=True
     ALLOWED_HOSTS=["*"]
     EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
     SECRET_KEY =config('SECRET_KEY')
