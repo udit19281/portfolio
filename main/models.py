@@ -16,7 +16,7 @@ class Project(models.Model):
     image=models.CharField(max_length=10,choices=choi)
 
     def __str__(self):
-        return self.name+" "+self.image
+        return self.name
 
 
 
