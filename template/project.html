@@ -55,7 +55,10 @@
                             <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">{{item.details}}</p>
-                            <button class="btn btn-primary" data-dismiss="modal">
+                            <!-- Portfolio Modal -Link -->
+                            <a class="mb-5" href="{{item.link}}">Project Link</a>
+                            <br>
+                            <button class="btn btn-primary mt-5" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
                             </button>

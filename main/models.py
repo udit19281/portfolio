@@ -18,7 +18,7 @@ class Project(models.Model):
     name = models.CharField(max_length=50)
     details=models.CharField(max_length=200)
     image=models.CharField(max_length=20,choices=choi)
-
+    link=models.URLField(max_length=200)
     def __str__(self):
         return self.name
 
