@@ -14,15 +14,16 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Portfolio Grid Items-->
-        {% for item in obj %}
-        <div class="row justify-content-center">
+        
+        <div class="row justify-content-center col-auto">
+            {% for item in obj %}
             <!-- Portfolio Item 1-->
-            <div class="col-md-4 col-lg-12 mb-5">
+            <div class="mb-5 ml-5 mr-5">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal{{item.id}}">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <img class="img-fluid" style="max-width:900;max-height:600;min-width: 300px;min-height: 300px;"src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" {{ item.image }} alt="..." />
+                    <img class="img-fluid" style="max-width:400px;max-height:400px;min-width: 300px;min-height: 300px;"src="{{item.image}}" alt="..." />
                     <h3 class="mb-3 mt-5 text-center" style="color: #0859a9;">{{item.name}}</h3>
                 </div>
                 
@@ -42,7 +43,7 @@
             <div class="modal-body text-center">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-auto">
                             <!-- Portfolio Modal - Title-->
                             <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal{{item.id}}Label">{{item.name}}</h2>
                             <!-- Icon Divider-->
@@ -52,7 +53,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <img class="img-fluid rounded mb-3" style="max-width:900;max-height:600;" src="{% static 'assets/img/portfolio/'|add:item.image|add:'.png' %}" alt="..." />
+                            <img class="img-fluid rounded mb-3" style="max-width:400px;max-height:400px;" src="{{item.image}}" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <h5 class="mb-2" style="color: #0859a9;">{{item.details}}</h5>
                             <!-- Portfolio Modal -Link -->
